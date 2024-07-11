@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Weekends Wala MVC</title>
 </head>
-<body>
+<body bgcolor="pink">
 <h1>This Is My First Response From Spring MVC</h1>
+
 </body>
 </html>
