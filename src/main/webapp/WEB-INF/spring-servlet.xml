@@ -16,6 +16,12 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
+	
+	<bean name="viewresolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/"></property>
+	<property name="suffix" value=".jsp"></property>
+	
+	</bean>
  
 </beans>
 
