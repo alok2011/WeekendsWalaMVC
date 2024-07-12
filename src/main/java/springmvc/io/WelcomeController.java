@@ -18,7 +18,7 @@ public class WelcomeController
 	@ResponseBody
 	public String login()
 	{
-		System.out.println("WelcomeController.welcome()");
+		System.out.println("WelcomeController.Login()");
 		return "Login Successfully Done!!!!!";
 	}
 
