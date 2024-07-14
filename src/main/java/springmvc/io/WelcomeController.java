@@ -8,18 +8,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WelcomeController 
 {
 	@RequestMapping("/")
-	public String welcome()
+	@ResponseBody
+	public String message()
 	{
-		System.out.println("WelcomeController.welcome()");
+		System.out.println("WelcomeController.message()");
 		return "home";
 	}
-	
-	@RequestMapping("/login")
-	@ResponseBody
-	public String login()
+	@RequestMapping("/admin")
+	public String adminDetails()
 	{
-		System.out.println("WelcomeController.Login()");
-		return "Login Successfully Done!!!!!";
+		System.out.println("WelcomeController.adminDetails()");
+		return "admin";
 	}
-
 }
