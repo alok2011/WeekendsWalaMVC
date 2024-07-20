@@ -20,4 +20,11 @@ public class WelcomeController
 		System.out.println("WelcomeController.adminDetails()");
 		return "admin.jsp";
 	}
+	
+	
+	
+	
+//====================This is Single Controller Class==============	
+
+
 }
