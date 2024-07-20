@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>Welcome admin to this Anyayi world</h1>
+<h2>This Is admin.jsp</h2>
 </body>
 </html>
