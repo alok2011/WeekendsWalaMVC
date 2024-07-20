@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class WelcomeController 
 {
+
 //	@ResponseBody
 	@RequestMapping("/")
 	public String message()
@@ -20,11 +21,6 @@ public class WelcomeController
 		System.out.println("WelcomeController.adminDetails()");
 		return "admin.jsp";
 	}
+//=========It is not working properly bcz welcomecontroller_2 is not returning jsp files it can return java objects with @ResponseBody annotation.
 	
-	
-	
-	
-//====================This is Single Controller Class==============	
-
-
 }
