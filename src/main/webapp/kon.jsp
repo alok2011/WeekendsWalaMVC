@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Hellooooooooooo</h1>
-<h2>This is index.jsp</h2>
+<h1>This is kon.jsp</h1>
 </body>
 </html>
