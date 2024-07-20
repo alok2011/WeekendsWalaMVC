@@ -39,21 +39,26 @@ public class WelcomeController
 
 //	 @GetMapping(path= {"/getmapping"}, params="name")
 //	 public String getParam(HttpServletRequest req, HttpServletResponse res) {
-	@GetMapping(path = { "/getParam" })
+	
+	
+	@GetMapping(path = {"/getParam","/leParam"})
 	public String getParam(@RequestParam(name = "name", defaultValue = "Guest") String name)
 	{
-		System.out.println("Controller-  params=name: " + name);
+		System.out.println("Controller - params=name: " + name);
 		return "kon.jsp";
 	}
 
+	
+	
 //	// hello/getCustomer/1234/details
-//	@ResponseBody
-//	@GetMapping(path = { "/getCustomer/{customerId}/details" })
-//	public String getPathVariable(@PathVariable String customerId) {
-//
-//		System.out.println("Controller-  params=customerId : " + customerId);
-//		return "Controller-  params=customerId : " + customerId;
-//	}
+	@ResponseBody
+	@GetMapping(path = { "/getCustomer/{customerId}/details" })
+	public String getPathVariable(@PathVariable String customerId)
+	{
+
+		System.out.println("Controller-  params=customerId : " + customerId);
+		return "Controller-  params=customerId : " + customerId;
+	}
 //
 //	
 //	
