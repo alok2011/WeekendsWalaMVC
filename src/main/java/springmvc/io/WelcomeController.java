@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WelcomeController 
 {
 
-//	@ResponseBody
+	
 	@RequestMapping("/")
 	public String message()
 	{
