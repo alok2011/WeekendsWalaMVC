@@ -21,6 +21,7 @@ public class WelcomeController
 		System.out.println("WelcomeController.adminDetails()");
 		return "admin.jsp";
 	}
-//=========It is not working properly bcz welcomecontroller_2 is not returning jsp files it can return java objects with @ResponseBody annotation.
+
 	
+//======It Is Single Controller Class/================================ 
 }
