@@ -17,12 +17,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
-//@RequestMapping("/")
 public class WelcomeController 
 {
 
-	//	 @RequestMapping(method = RequestMethod.GET)
-//	@GetMapping(path = { "/getmapping", "/fetchMapping" })
+	
 	@RequestMapping("/")
 	public String get(HttpServletRequest req, HttpServletResponse res) {
 		
@@ -36,10 +34,6 @@ public class WelcomeController
 		System.out.println("WelcomeController.disp()");
 		return "kon.jsp";
 	}
-
-//	 @GetMapping(path= {"/getmapping"}, params="name")
-//	 public String getParam(HttpServletRequest req, HttpServletResponse res) {
-	
 	
 	@GetMapping(path = {"/getParam","/leParam"})
 	public String getParam(@RequestParam(name = "name", defaultValue = "Guest") String name)
