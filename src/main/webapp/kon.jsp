@@ -8,5 +8,6 @@
 </head>
 <body>
 <h1>This is kon.jsp</h1>
+<a href="orem">lol</a>
 </body>
 </html>

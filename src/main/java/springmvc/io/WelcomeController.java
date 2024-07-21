@@ -53,7 +53,7 @@ public class WelcomeController
 //	// hello/getCustomer/1234/details
 	@ResponseBody
 	@GetMapping(path = { "/getCustomer/{customerId}/details" })
-	public String getPathVariable(@PathVariable String customerId)
+	public String getPathVariable(@PathVariable(name = "customerId") String customerId)
 	{
 
 		System.out.println("Controller-  params=customerId : " + customerId);
