@@ -2,125 +2,67 @@ package springmvc.io;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class WelcomeController 
 {
-
+	
+	@RequestMapping("/login")
+	public String display(@RequestParam(name = "name") String name, @RequestParam(name = "pass") String pass, Model m)
+	{
+		System.out.println("WelcomeController.display()");
+		
+		if(name.equals("kunal") && pass.equals("admin"))
+		{
+			String msg = "Hello "+name+" All Is Yours";
+			m.addAttribute("message",msg);
+			return "viewPage.jsp";
+		}
+		else
+		{
+			System.out.println("WelcomeController.display2()");
+			String msg = "Sorry " + name + ". You entered an incorrect name or password";
+			m.addAttribute("message", msg);
+			return "errorPage.jsp";
+		}
+		
+		
+	}
+	
+	
+	
 	
 	@RequestMapping("/")
-	public String get(HttpServletRequest req, HttpServletResponse res) {
-		
-		System.out.println("Controller- fetchMapping");
-		return "alok.jsp";
-	}
-	
-	@RequestMapping("/getmapping")
-	public String disp()
+	public String welcome()
 	{
-		System.out.println("WelcomeController.disp()");
-		return "kon.jsp";
+		System.out.println("WelcomeController.welcome()");
+		return "indexx.jsp";
 	}
 	
-	@GetMapping(path = {"/getParam","/leParam"})
-	public String getParam(@RequestParam(name = "name", defaultValue = "Guest") String name)
-	{
-		System.out.println("Controller - params=name: " + name);
-		return "kon.jsp";
-		
-	}
-
 	
-	@ResponseBody
-	@GetMapping(path = { "/getCustomer/{customerId}/details" })
-	public String getPathVariable(@PathVariable(name = "customerId") String customerId)
-	{
-
-		System.out.println("Controller-  params=customerId : " + customerId);
-		return "Controller-  params=customerId : " + customerId;
-	}
-
-	@RequestMapping("/setCookie")
-	public String setCookie(HttpServletResponse response) {
-	    Cookie cookie = new Cookie("myCookie", "DangerValue");
-	    cookie.setMaxAge(10); // Cookie will expire in 10 seconds
-	    response.addCookie(cookie);
-	    return "redirect:/second";
-	}
-
+//========Ye Hum Servlet Me Karte The Ab hum iski jagah @RequestParam Annotation kam Kregaa=================================	
 	
-	@RequestMapping("/second")
-//	@ResponseBody
-    public String secondPage(@CookieValue(value = "myCookie", defaultValue = "defaultCookieValue1") String myCookieValue, Model model) 
-	{
-        // Use myCookieValue in your controller logic
-        model.addAttribute("cookiesValue", myCookieValue);
-        return "second.jsp";
-    }
-
-	
-	@GetMapping(path = { "/getCookie" })
-	public String getCookiesValue(HttpServletRequest req, @CookieValue("JSESSIONID") String jsessionCookie) 
-	{
-		String value= "";
-		Cookie[] cookies = req.getCookies();
-		for (Cookie cookie : cookies) {
-			if (cookie.getName().equals("JSESSIONID")) {
-				value = cookie.getValue();
-			}
-		}
-		System.out.println("Controller-  cookie=" + value);
-		System.out.println("Controller-  jsessionCookie=" + jsessionCookie);
-		return "index";
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-// @RequestMapping(method = RequestMethod.POST)
-//	@PostMapping
-//	public String post(HttpServletRequest req, HttpServletResponse res)
-//	{
-//
-//		System.out.println("Controller- POST");
-//		return "index";
+//	@RequestMapping("/login")
+//	public String display(HttpServletRequest req, Model m) {
+//		
+//		String name = req.getParameter("name");
+//		String pass = req.getParameter("pass");
+//		
+//		System.out.println("HelloWorldController.display()");	
+//		if (name.equals("kunal") && pass.equals("admin")) {
+//			String msg = "HELLO " + name + " Now ALL YOURS IN MVC";
+//			// add a message to the model
+//			m.addAttribute("message", msg);
+//			return "viewPage.jsp";
+//		} else {
+//			String msg = "Sorry " + name + ". You entered an incorrect name or password";
+//			m.addAttribute("message", msg);
+//			return "errorPage.jsp";
+//		}
 //	}
-
 	
-// @RequestMapping(method = RequestMethod.DELETE)
-//	@DeleteMapping
-//	public String delete(HttpServletRequest req, HttpServletResponse res) 
-//	{
-//
-//		System.out.println("Controller- DELETE");
-//		return "index";
-//	}
 }

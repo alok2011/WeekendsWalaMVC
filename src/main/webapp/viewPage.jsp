@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is kon.jsp</h1>
-<a href="orem">lol</a>
+${message}  
+<br><br>  
 </body>
 </html>
