@@ -18,8 +18,13 @@ public class WelcomeController
 	@ResponseBody
 	public String login()
 	{
-		System.out.println("WelcomeController.welcome()");
+		System.out.println("WelcomeController.login()");
 		return "Login Successfully Done!!!!!";
 	}
+	
+	
+	
+	// This Program is running but the error is continuously showing at 1st line in home.jsp
+	
 
 }
